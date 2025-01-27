@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Conor McGregor - The Notorious</title>
+      <link rel="stylesheet" href="styles.css" />
+      <!-- Підключення CSS -->
+      <link rel="icon" href="logo.png" type="image/png" sizes="any" />
+      <link rel="icon" href="logo.png" type="image/png" sizes="32x32" />
+      <!-- Додавання фавіконки -->
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+         rel="stylesheet"
+      />
+   </head>
+   <body>
+      <div class="container">
+         <div class="header">
+            <img src="ico7.png" alt="Logo" class="main-logo" />
+            <h1 class="title">THE NOTORIOUS</h1>
+            <p class="slogan">
+               <span>PRECISION</span>
+               <span>BEATS</span>
+               <span>POWER</span>
+               <span>ALWAYS</span>
+            </p>
+         </div>
+
+         <div class="stats-container">
+            <div class="stat-item">
+               <span class="stat-number">22</span>
+               <span class="stat-label">WINS</span>
+            </div>
+            <div class="stat-item">
+               <span class="stat-number">19</span>
+               <span class="stat-label">KO/TKO</span>
+            </div>
+            <div class="stat-item">
+               <span class="stat-number">2</span>
+               <span class="stat-label">WEIGHT CLASSES</span>
+            </div>
+         </div>
+
+         <div class="icons">
+            <a href="https://twitter.com/TheNotoriousMMA" target="_blank">
+               <img src="ico4.png" alt="Twitter" />
+            </a>
+            <a href="https://instagram.com/thenotoriousmma" target="_blank">
+               <img src="ico3.png" alt="Instagram" />
+            </a>
+            <a href="https://properwhiskey.com" target="_blank">
+               <img src="ico6.png" alt="Proper No. Twelve" />
+            </a>
+            <a href="https://dextools.io/" target="_blank">
+               <img src="ico1.png" alt="Dextools" />
+            </a>
+            <a href="https://dexscreener.com/" target="_blank">
+               <img src="ico2.png" alt="Dexscreener" />
+            </a>
+         </div>
+
+         <div class="particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+         </div>
+
+         <div class="fighting-stance"></div>
+         <div class="fighting-stance-2"></div>
+         <div class="fighting-stance-3"></div>
+         <div class="fighting-stance-4"></div>
+      </div>
+
+      <div class="impact-wave">
+         <div class="wave"></div>
+         <div class="wave"></div>
+         <div class="wave"></div>
+      </div>
+
+      <div class="energy-flash">
+         <div class="flash"></div>
+         <div class="flash"></div>
+         <div class="flash"></div>
+         <div class="flash"></div>
+         <div class="flash"></div>
+      </div>
+
+      <div class="combat-aura"></div>
+
+      <div class="strike-trails">
+         <div class="strike"></div>
+         <div class="strike"></div>
+         <div class="strike"></div>
+      </div>
+
+      <div class="energy-field"></div>
+
+      <div class="power-sparks">
+         <div class="spark"></div>
+         <div class="spark"></div>
+         <div class="spark"></div>
+         <div class="spark"></div>
+      </div>
+
+      <script>
+         document
+            .getElementById('progressText')
+            .addEventListener('click', function () {
+               const textToCopy = this.textContent;
+               navigator.clipboard
+                  .writeText(textToCopy)
+                  .then(() => {
+                     alert('Text copied to clipboard!');
+                  })
+                  .catch((err) => {
+                     console.error('Failed to copy text: ', err);
+                  });
+            });
+      </script>
+   </body>
+</html>

@@ -1,0 +1,1025 @@
+/* Скидання стилів */
+body {
+   margin: 0;
+   padding: 0;
+   background-color: black;
+   color: white;
+   font-family: Arial, sans-serif;
+   min-height: 100vh;
+   height: 100vh; /* фиксированная высота */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   overflow: hidden; /* убираем скролл */
+}
+
+.container {
+   width: 100%;
+   max-width: 1200px;
+   text-align: center;
+   padding: 20px;
+   position: relative; /* добавляем для правильного позиционирования */
+   overflow: hidden; /* убираем скролл внутри контейнера */
+}
+
+.header {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 20px;
+}
+
+.main-logo {
+   width: 200px;
+   height: auto;
+   margin-bottom: 0;
+   filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.3));
+   animation: logoGlow 3s ease-in-out infinite;
+}
+
+@keyframes logoGlow {
+   0%,
+   100% {
+      filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.3));
+   }
+   50% {
+      filter: drop-shadow(0 0 25px rgba(255, 215, 0, 0.5));
+   }
+}
+
+.title {
+   font-family: 'Anton', sans-serif;
+   font-size: 5rem;
+   background: linear-gradient(45deg, #ffd700, #ff4500);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   text-transform: uppercase;
+   margin: 20px 0;
+   animation: titlePunch 2s infinite;
+}
+
+/* Единые стили для слогана */
+.slogan {
+   display: flex;
+   justify-content: center;
+   gap: 10px;
+   font-size: 80px;
+   font-weight: 900;
+   text-transform: uppercase;
+   font-family: 'Anton', sans-serif;
+   letter-spacing: 1px;
+   margin: 0;
+   margin-bottom: 20px;
+}
+
+.slogan span {
+   text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+   position: relative;
+   background: linear-gradient(90deg, #ffd700, #ff4500, #ffd700, #ff6b00);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   background-size: 300% 100%;
+   animation: textShine 4s ease-in-out infinite;
+   padding-bottom: 5px;
+}
+
+.slogan span::after {
+   content: '';
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   height: 2px;
+   background: #ffd700;
+   transform: scaleX(0);
+   transition: transform 0.3s;
+}
+
+.slogan span:hover::after {
+   transform: scaleX(1);
+}
+
+/* Добавляем задержку анимации для каждого слова */
+.slogan span:nth-child(1) {
+   animation-delay: 0s;
+}
+.slogan span:nth-child(2) {
+   animation-delay: 0.5s;
+}
+.slogan span:nth-child(3) {
+   animation-delay: 1s;
+}
+.slogan span:nth-child(4) {
+   animation-delay: 1.5s;
+}
+
+.progress-bar {
+   background-color: #444;
+   width: 80%;
+   max-width: 800px;
+   height: 50px;
+   margin: 0 auto;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   position: relative;
+   overflow: hidden;
+}
+
+.progress-bar:hover {
+   background-color: #555;
+}
+
+.progress-bar::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: -100%;
+   width: 100%;
+   height: 100%;
+   background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+   );
+   transition: 0.5s;
+}
+
+.progress-bar:hover::before {
+   left: 100%;
+   transition: 0.5s;
+}
+
+.progress-text {
+   color: white;
+   font-size: 32px;
+   letter-spacing: 2px;
+   font-weight: bold;
+   transition: all 0.3s ease;
+}
+
+.progress-bar:hover .progress-text {
+   letter-spacing: 3px;
+}
+
+.icons {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 15px;
+   margin-top: 15px;
+}
+
+.icons img {
+   width: 75px;
+   height: 75px;
+   transition: transform 0.2s;
+}
+
+.icons a:nth-child(3) img {
+   width: 100px;
+   height: auto; /* Автоматическая высота для сохранения пропорций */
+}
+
+.icons img:hover {
+   transform: scale(1.1);
+}
+
+.icons a {
+   text-decoration: none;
+   display: inline-block;
+   margin: 0 10px;
+}
+
+.icons img:hover {
+   transform: scale(1.2);
+}
+
+@font-face {
+   font-family: 'GoodTimingBD'; /* Назва шрифту */
+   src: url('./GoodTimingBD.ttf') format('truetype'); /* Шлях до файлу */
+   font-weight: normal; /* За потреби можна додати інші варіанти */
+   font-style: normal;
+}
+h1 {
+   font-family: 'GoodTimingBD', sans-serif;
+}
+
+/* Добавляем медиа-запросы для мобильных устройств */
+@media screen and (max-width: 768px) {
+   .main-logo {
+      width: 150px;
+   }
+
+   .title {
+      font-size: 3rem;
+   }
+
+   .slogan {
+      font-size: 40px;
+      gap: 8px;
+      margin-bottom: 15px;
+   }
+
+   .progress-bar {
+      width: 90%;
+      height: 40px;
+   }
+
+   .progress-text {
+      font-size: 20px;
+   }
+
+   .icons {
+      gap: 10px;
+      margin-top: 10px;
+      flex-wrap: wrap; /* позволяет иконкам переноситься на новую строку */
+   }
+
+   .icons img {
+      width: 39px;
+      height: 39px;
+   }
+
+   .icons a:nth-child(3) img {
+      width: 52px;
+      height: auto;
+   }
+}
+
+/* Добавляем медиа-запрос для очень маленьких экранов */
+@media screen and (max-width: 480px) {
+   .container {
+      padding: 10px;
+   }
+
+   .main-logo {
+      width: 120px;
+   }
+
+   .title {
+      font-size: 3rem;
+   }
+
+   .slogan {
+      font-size: 32px;
+      gap: 8px;
+      margin-bottom: 20px;
+   }
+
+   .progress-bar {
+      height: 35px;
+   }
+
+   .progress-text {
+      font-size: 16px;
+   }
+
+   .icons {
+      gap: 10px;
+   }
+
+   .icons img {
+      width: 33px;
+      height: 33px;
+   }
+
+   .icons a:nth-child(3) img {
+      width: 44px;
+      height: auto;
+   }
+}
+
+/* Добавляем контейнер для частиц */
+.particles {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: -1;
+   overflow: hidden;
+}
+
+/* Создаем частицы */
+.particle {
+   position: absolute;
+   width: 2px;
+   height: 2px;
+   background: linear-gradient(45deg, #ffd700, #ff4500);
+   border-radius: 50%;
+   box-shadow: 0 0 10px #ffd700;
+}
+
+/* Генерируем 20 частиц с разными анимациями */
+@for $i from 1 through 20 {
+   .particle:nth-child(#{$i}) {
+      left: random(100) * 1%;
+      animation: particleFloat#{$i} #{random(15) + 10}s linear infinite;
+   }
+
+   @keyframes particleFloat#{$i} {
+      0% {
+         transform: translateY(-100%) rotate(0deg);
+         opacity: 0;
+      }
+      20% {
+         opacity: 0.5;
+      }
+      80% {
+         opacity: 0.5;
+      }
+      100% {
+         transform: translateY(100vh) rotate(360deg);
+         opacity: 0;
+      }
+   }
+}
+
+/* Удаляем старые анимации линий */
+.container::before,
+.container::after {
+   display: none; /* или можно полностью удалить этот блок кода */
+}
+
+/* Удаляем анимацию сканирующей линии */
+.scan-line {
+   display: none; /* или можно полностью удалить этот блок кода */
+}
+
+/* Удаляем связанные keyframes */
+@keyframes linePulse {
+   /* можно удалить полностью */
+}
+
+@keyframes scan {
+   /* можно удалить полностью */
+}
+
+/* Эффект боевого духа */
+.impact-wave {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: -1;
+   pointer-events: none;
+}
+
+.wave {
+   position: absolute;
+   width: 2px;
+   height: 40px;
+   background: linear-gradient(
+      to bottom,
+      transparent,
+      rgba(255, 215, 0, 0.4),
+      transparent
+   );
+   animation: punchTrail 2s ease-out infinite;
+}
+
+.wave:nth-child(1) {
+   top: 40%;
+   left: 30%;
+   transform: rotate(-45deg);
+   animation-delay: 0s;
+}
+
+.wave:nth-child(2) {
+   top: 35%;
+   right: 35%;
+   transform: rotate(45deg);
+   animation-delay: 0.7s;
+}
+
+.wave:nth-child(3) {
+   top: 45%;
+   left: 50%;
+   transform: rotate(15deg);
+   animation-delay: 1.4s;
+}
+
+@keyframes punchTrail {
+   0% {
+      height: 0;
+      opacity: 0;
+   }
+   20% {
+      height: 40px;
+      opacity: 1;
+   }
+   100% {
+      height: 10px;
+      opacity: 0;
+      transform: translateY(100px);
+   }
+}
+
+/* Добавляем эффект быстрых ударов */
+.wave::after {
+   content: '';
+   position: absolute;
+   width: 4px;
+   height: 4px;
+   background: #ffd700;
+   border-radius: 50%;
+   top: 0;
+   left: 50%;
+   transform: translateX(-50%);
+   box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+   animation: quickJab 2s ease-out infinite;
+}
+
+@keyframes quickJab {
+   0% {
+      transform: translateX(-50%) scale(1);
+      opacity: 0;
+   }
+   10% {
+      transform: translateX(-50%) scale(1.5);
+      opacity: 1;
+   }
+   30% {
+      transform: translateX(-50%) scale(0.8);
+      opacity: 0.5;
+   }
+   100% {
+      transform: translateX(-50%) scale(0);
+      opacity: 0;
+   }
+}
+
+/* Медиа-запросы для мобильных устройств */
+@media screen and (max-width: 768px) {
+   .wave {
+      height: 30px;
+   }
+
+   .wave::after {
+      width: 3px;
+      height: 3px;
+   }
+}
+
+/* Эффект энергетических вспышек */
+.energy-flash {
+   position: fixed;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   z-index: -2;
+   pointer-events: none;
+}
+
+.flash {
+   position: absolute;
+   width: 3px;
+   height: 100px;
+   background: linear-gradient(to bottom, transparent, #ffd700, transparent);
+   animation: flashMove 2s ease-in-out infinite;
+}
+
+.flash:nth-child(1) {
+   left: 10%;
+   animation-delay: 0.2s;
+}
+
+.flash:nth-child(2) {
+   left: 30%;
+   animation-delay: 0.7s;
+}
+
+.flash:nth-child(3) {
+   left: 50%;
+   animation-delay: 1.2s;
+}
+
+.flash:nth-child(4) {
+   left: 70%;
+   animation-delay: 1.7s;
+}
+
+.flash:nth-child(5) {
+   left: 90%;
+   animation-delay: 2.2s;
+}
+
+@keyframes flashMove {
+   0% {
+      transform: translateY(-100%) rotate(25deg);
+      opacity: 0;
+   }
+   50% {
+      opacity: 1;
+   }
+   100% {
+      transform: translateY(100%) rotate(25deg);
+      opacity: 0;
+   }
+}
+
+/* Эффект боевой ауры */
+.combat-aura {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: radial-gradient(
+      circle at center,
+      transparent 0%,
+      rgba(255, 215, 0, 0.05) 50%,
+      transparent 100%
+   );
+   animation: pulseAura 4s ease-in-out infinite;
+   z-index: -3;
+   pointer-events: none;
+}
+
+@keyframes pulseAura {
+   0%,
+   100% {
+      transform: scale(1);
+      opacity: 0.3;
+   }
+   50% {
+      transform: scale(1.2);
+      opacity: 0.1;
+   }
+}
+
+/* Медиа-запросы для анимаций */
+@media screen and (max-width: 768px) {
+   .wave {
+      display: none; /* Отключаем тяжелые анимации на мобильных */
+   }
+
+   .flash {
+      height: 50px;
+   }
+
+   .combat-aura {
+      opacity: 0.1;
+   }
+}
+
+/* Обновленные стили для статистики */
+.stats-container {
+   display: flex;
+   justify-content: center;
+   gap: 20px;
+   margin: 15px 0;
+}
+
+.stat-item {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding: 15px 25px;
+   background: linear-gradient(
+      145deg,
+      rgba(255, 215, 0, 0.1),
+      rgba(255, 69, 0, 0.1)
+   );
+   border: 1px solid rgba(255, 215, 0, 0.2);
+   border-radius: 15px;
+   position: relative;
+   overflow: hidden;
+   transition: all 0.3s ease;
+}
+
+.stat-item::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: -100%;
+   width: 100%;
+   height: 100%;
+   background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 215, 0, 0.2),
+      transparent
+   );
+   transition: 0.5s;
+}
+
+.stat-item:hover::before {
+   left: 100%;
+}
+
+.stat-item:hover {
+   transform: translateY(-5px);
+   box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2);
+   background: linear-gradient(
+      145deg,
+      rgba(255, 215, 0, 0.15),
+      rgba(255, 69, 0, 0.15)
+   );
+}
+
+.stat-number {
+   font-size: 3.5rem;
+   font-weight: 900;
+   font-family: 'Anton', sans-serif;
+   background: linear-gradient(45deg, #ffd700, #ff4500);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   text-shadow: 2px 2px 10px rgba(255, 215, 0, 0.3);
+   margin-bottom: 5px;
+}
+
+.stat-label {
+   font-size: 0.9rem;
+   font-weight: 600;
+   letter-spacing: 2px;
+   color: #888;
+   text-transform: uppercase;
+   position: relative;
+   padding-bottom: 5px;
+}
+
+.stat-label::after {
+   content: '';
+   position: absolute;
+   bottom: 0;
+   left: 50%;
+   transform: translateX(-50%);
+   width: 30px;
+   height: 2px;
+   background: linear-gradient(90deg, #ffd700, #ff4500);
+   border-radius: 2px;
+}
+
+/* Медиа-запросы для адаптивности */
+@media screen and (max-width: 768px) {
+   .stats-container {
+      flex-direction: column;
+      gap: 10px;
+   }
+
+   .stat-item {
+      padding: 10px 20px;
+   }
+
+   .stat-number {
+      font-size: 2.8rem;
+   }
+
+   .stat-label {
+      font-size: 0.8rem;
+   }
+}
+
+/* Новая анимация для заголовка */
+@keyframes titlePunch {
+   0%,
+   100% {
+      transform: scale(1);
+   }
+   50% {
+      transform: scale(1.05);
+   }
+}
+
+/* Обновляем стили для боевой стойки */
+.fighting-stance {
+   position: fixed;
+   bottom: 20%;
+   right: -50px;
+   width: 600px;
+   height: 800px;
+   background: url('mcgregor-stance.png') no-repeat center/contain;
+   opacity: 0.15;
+   animation: stanceFloat 4s ease-in-out infinite;
+   z-index: -1;
+   filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.3));
+}
+
+@keyframes stanceFloat {
+   0%,
+   100% {
+      transform: translateY(0) scale(1);
+      filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.3));
+   }
+   50% {
+      transform: translateY(-20px) scale(1.02);
+      filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.4));
+   }
+}
+
+/* Медиа-запросы для первого силуэта */
+@media screen and (max-width: 768px) {
+   .fighting-stance {
+      width: 400px;
+      height: 600px;
+      right: -100px;
+      bottom: 15%;
+      opacity: 0.1;
+   }
+}
+
+@media screen and (max-width: 480px) {
+   .fighting-stance {
+      width: 300px;
+      height: 450px;
+      right: -80px;
+      bottom: 10%;
+   }
+}
+
+/* Удаляем старые стили линий и добавляем новые эффекты */
+
+/* Эффект ударных следов */
+.strike-trails {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: -1;
+   pointer-events: none;
+}
+
+.strike {
+   position: absolute;
+   width: 100px;
+   height: 3px;
+   background: linear-gradient(90deg, transparent, #ffd700, transparent);
+   transform-origin: left;
+   animation: strikeEffect 1.5s ease-out infinite;
+}
+
+.strike:nth-child(1) {
+   top: 30%;
+   left: 20%;
+   transform: rotate(45deg);
+   animation-delay: 0s;
+}
+
+.strike:nth-child(2) {
+   top: 60%;
+   left: 60%;
+   transform: rotate(-30deg);
+   animation-delay: 0.5s;
+}
+
+.strike:nth-child(3) {
+   top: 40%;
+   left: 40%;
+   transform: rotate(15deg);
+   animation-delay: 1s;
+}
+
+@keyframes strikeEffect {
+   0% {
+      transform-origin: left;
+      transform: scaleX(0) rotate(45deg);
+      opacity: 1;
+   }
+   40% {
+      transform: scaleX(1) rotate(45deg);
+      opacity: 0.8;
+   }
+   100% {
+      transform: scaleX(0) translateX(100%) rotate(45deg);
+      opacity: 0;
+   }
+}
+
+/* Эффект энергетического поля */
+.energy-field {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: -2;
+   background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 50px,
+      rgba(255, 215, 0, 0.03) 50px,
+      rgba(255, 215, 0, 0.03) 100px
+   );
+   animation: fieldPulse 4s ease-in-out infinite;
+}
+
+@keyframes fieldPulse {
+   0%,
+   100% {
+      opacity: 0.3;
+      transform: scale(1);
+   }
+   50% {
+      opacity: 0.5;
+      transform: scale(1.05);
+   }
+}
+
+/* Эффект вспышек */
+.power-sparks {
+   position: fixed;
+   width: 100%;
+   height: 100%;
+   z-index: -3;
+   pointer-events: none;
+}
+
+.spark {
+   position: absolute;
+   width: 4px;
+   height: 4px;
+   background: #ffd700;
+   border-radius: 50%;
+   box-shadow: 0 0 10px #ffd700, 0 0 20px #ff4500;
+   animation: sparkle 2s ease-in-out infinite;
+}
+
+.spark:nth-child(1) {
+   left: 20%;
+   top: 20%;
+   animation-delay: 0s;
+}
+.spark:nth-child(2) {
+   left: 80%;
+   top: 40%;
+   animation-delay: 0.3s;
+}
+.spark:nth-child(3) {
+   left: 40%;
+   top: 70%;
+   animation-delay: 0.6s;
+}
+.spark:nth-child(4) {
+   left: 60%;
+   top: 30%;
+   animation-delay: 0.9s;
+}
+
+@keyframes sparkle {
+   0%,
+   100% {
+      transform: scale(0);
+      opacity: 0;
+   }
+   50% {
+      transform: scale(1);
+      opacity: 1;
+   }
+}
+
+/* Медиа-запросы для оптимизации на мобильных устройствах */
+@media screen and (max-width: 768px) {
+   .strike {
+      width: 50px;
+   }
+
+   .energy-field {
+      opacity: 0.2;
+   }
+
+   .spark {
+      width: 2px;
+      height: 2px;
+   }
+}
+
+/* Добавляем стили для дополнительных силуэтов */
+.fighting-stance-2 {
+   position: fixed;
+   top: -150px;
+   left: -30px;
+   width: 500px;
+   height: 700px;
+   background: url('mcgregor-stance2.png') no-repeat center/contain;
+   opacity: 0.12;
+   animation: stanceFloat2 5s ease-in-out infinite;
+   z-index: -1;
+   filter: drop-shadow(0 0 20px rgba(255, 69, 0, 0.3));
+   transform: scaleX(-1);
+}
+
+.fighting-stance-3 {
+   position: fixed;
+   top: 30%;
+   left: 70%;
+   width: 400px;
+   height: 600px;
+   background: url('mcgregor-stance3.png') no-repeat center/contain;
+   opacity: 0.1;
+   animation: stanceFloat3 6s ease-in-out infinite;
+   z-index: -1;
+   filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.3));
+}
+
+@keyframes stanceFloat2 {
+   0%,
+   100% {
+      transform: translateY(0) scale(1) scaleX(-1);
+      filter: drop-shadow(0 0 20px rgba(255, 69, 0, 0.3));
+   }
+   50% {
+      transform: translateY(-15px) scale(1.01) scaleX(-1);
+      filter: drop-shadow(0 0 30px rgba(255, 69, 0, 0.4));
+   }
+}
+
+@keyframes stanceFloat3 {
+   0%,
+   100% {
+      transform: translateY(0) rotate(-5deg);
+      filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.3));
+   }
+   50% {
+      transform: translateY(-10px) rotate(2deg);
+      filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.4));
+   }
+}
+
+/* Медиа-запросы для дополнительных силуэтов */
+@media screen and (max-width: 768px) {
+   .fighting-stance-2 {
+      width: 300px;
+      height: 450px;
+      left: -50px;
+      top: -100px;
+      opacity: 0.08;
+   }
+
+   .fighting-stance-3 {
+      width: 250px;
+      height: 375px;
+      left: 50%;
+      top: 35%;
+      opacity: 0.08;
+   }
+}
+
+@media screen and (max-width: 480px) {
+   .fighting-stance-2 {
+      width: 200px;
+      height: 300px;
+      left: -30px;
+      top: -80px;
+   }
+
+   .fighting-stance-3 {
+      width: 180px;
+      height: 270px;
+      left: 40%;
+      top: 40%;
+   }
+}
+
+/* Добавляем четвертый силуэт */
+.fighting-stance-4 {
+   position: fixed;
+   bottom: 10%;
+   left: 15%;
+   width: 450px;
+   height: 650px;
+   background: url('mcgregor-stance4.png') no-repeat center/contain;
+   opacity: 0.12;
+   animation: stanceFloat4 5.5s ease-in-out infinite;
+   z-index: -1;
+   filter: drop-shadow(0 0 20px rgba(255, 69, 0, 0.3));
+}
+
+/* Добавляем анимацию для четвертого силуэта */
+@keyframes stanceFloat4 {
+   0%,
+   100% {
+      transform: translateY(0) rotate(3deg);
+      filter: drop-shadow(0 0 20px rgba(255, 69, 0, 0.3));
+   }
+   50% {
+      transform: translateY(-12px) rotate(-2deg);
+      filter: drop-shadow(0 0 30px rgba(255, 69, 0, 0.4));
+   }
+}
+
+/* Добавляем медиа-запросы для четвертого силуэта */
+@media screen and (max-width: 768px) {
+   .fighting-stance-4 {
+      width: 280px;
+      height: 420px;
+      left: 5%;
+      opacity: 0.08;
+   }
+}
+
+@media screen and (max-width: 480px) {
+   .fighting-stance-4 {
+      width: 200px;
+      height: 300px;
+      left: 0;
+   }
+}
